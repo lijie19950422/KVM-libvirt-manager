@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="conf_all_success" name="deleteVm" method="post">
+        {% csrf_token %}
+            <input name="ip_server" type="text"  placeholder="请输入需要接受的机组（或ip）..."/>
+            <input name="src_file" type="text"  placeholder="请输入源文件..."/>
+            <input name="dest_file" type="text"  placeholder="请输入目标文件..."/>
+            <button type="submit">提交</button>
+    </form>
+</body>
+</html>

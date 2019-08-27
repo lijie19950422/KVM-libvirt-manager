@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+    <form action="register" name="register" method="post">
+        {% csrf_token %}
+        <p><input name="name" type="text"/></p>
+        <p><input name="age" type="text"/></p>
+        <p><input name="submit" type="submit" values="注册"/></p>
+    </form>
+    <a href="{% url 'show' %}">Show Students</a>
+</body>
+</html>

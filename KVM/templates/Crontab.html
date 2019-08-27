@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<!--[if IE 9 ]><html class="ie9"><![endif]-->
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+        <meta name="format-detection" content="telephone=no">
+        <meta charset="UTF-8">
+
+        <meta name="description" content="Violate Responsive Admin Template">
+        <meta name="keywords" content="Super Admin, Admin, Template, Bootstrap">
+
+        <title>KVM自动化运维管理平台</title>
+
+        <!-- CSS -->
+        <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../static/css/animate.min.css" rel="stylesheet">
+        <link href="../static/css/font-awesome.min.css" rel="stylesheet">
+        <link href="../static/css/form.css" rel="stylesheet">
+        <link href="../static/css/calendar.css" rel="stylesheet">
+        <link href="../static/css/style.css" rel="stylesheet">
+        <link href="../static/css/icons.css" rel="stylesheet">
+        <link href="../static/css/generics.css" rel="stylesheet">
+    </head>
+    <body id="skin-blur-violate">
+
+        <header id="header" class="media">
+            <a href="" id="menu-toggle"></a>
+            <a class="logo pull-left" href="">KVM资产平台  1.0</a>
+
+            <div class="media-body">
+                <div class="media" id="top-menu">
+                    <div class="pull-left tm-icon">
+                        <a data-drawer="notifications" class="drawer-toggle" href="">
+                            <i class="sa-top-updates"></i>
+                            <i class="n-count animated">9</i>
+                            <span>资产更新</span>
+                        </a>
+                    </div>
+
+
+
+                    <div id="time" class="pull-right">
+                        <span id="hours"></span>
+                        :
+                        <span id="min"></span>
+                        :
+                        <span id="sec"></span>
+                    </div>
+
+                    <div class="media-body">
+                        <input type="text" class="main-search">
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="clearfix"></div>
+
+        <section id="main" class="p-relative" role="main">
+
+            <!-- Sidebar -->
+            <aside id="sidebar">
+
+                <!-- Sidbar Widgets -->
+                <div class="side-widgets overflow">
+                    <!-- Profile Menu -->
+                    <div class="text-center s-widget m-b-25 dropdown" id="profile-menu">
+                        <a href="" data-toggle="dropdown">
+                            <img class="profile-pic animated" src="../static/img/profile-pic.jpg" alt="">
+                        </a>
+                        <ul class="dropdown-menu profile-menu">
+                            <li><a href="logout">登出</a> <i class="icon left">&#61903;</i><i class="icon right">&#61815;</i></li>
+                        </ul>
+                        <h4 class="m-0">{{ username }}</h4>
+                        24987376@qq.com
+                    </div>
+
+                    <!-- Calendar -->
+                    <div class="s-widget m-b-25">
+                        <div id="sidebar-calendar"></div>
+                    </div>
+
+                    <!-- Feeds -->
+
+                    </div>
+                </div>
+
+                <!-- Side Menu -->
+                <ul class="list-unstyled side-menu">
+                    <li class="active">
+                        <a class="sa-side-home" href="../">
+                            <span class="menu-item">主页</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="sa-side-typography" href="kvmVirtual/kvmVirtual.html">
+                            <span class="menu-item">宿主机信息</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="sa-side-widget" href="kvmVirtual/show_active_vhost.html">
+                            <span class="menu-item">启动的服务器</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="sa-side-widget" href="kvmVirtual/show_shut_down.html">
+                            <span class="menu-item">关闭的服务器</span>
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        <a class="sa-side-widget" href="">
+                            <span class="menu-item">增加服务器</span>
+                        </a>
+                        <ul class="list-unstyled menu-item">
+                            <li><a href="kvmVirtual/create_Vm_Host.html">Centos7</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="sa-side-ui" href="">
+                            <span class="menu-item">Apache</span>
+                        </a>
+                        <ul class="list-unstyled menu-item">
+                            <li><a href="Apache_Install">安装</a></li>
+                            <li><a href="start_Apache">启动</a></li>
+                            <li><a href="stop_Apache">关闭</a></li>
+                            <li><a href="restart_Apache">重启</a></li>
+                            <li><a href="enable_Apache">开机自启</a></li>
+                            <li><a href="disable_Apache">手动启动</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="sa-side-ui" href="">
+                            <span class="menu-item">Nginx</span>
+                        </a>
+                        <ul class="list-unstyled menu-item">
+                            <li><a href="rpm_nginx">安装</a></li>
+                            <li><a href="start_Nginx">启动</a></li>
+                            <li><a href="stop_Nginx">关闭</a></li>
+                            <li><a href="restart_Nginx">重启</a></li>
+                            <li><a href="enable_Nginx">开机自启</a></li>
+                            <li><a href="disable_Nginx">手动启动</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="sa-side-ui" href="">
+                            <span class="menu-item">MySQL</span>
+                        </a>
+                        <ul class="list-unstyled menu-item">
+                            <li><a href="Mysql_Install">安装</a></li>
+                            <li><a href="start_Mysql">启动</a></li>
+                            <li><a href="stop_Mysql">关闭</a></li>
+                            <li><a href="restart_Mysql">重启</a></li>
+                            <li><a href="enable_Mysql">开机自启</a></li>
+                            <li><a href="disable_Mysql">手动启动</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="sa-side-chart" href="zabbix_agent_install">
+                            <span class="menu-item">监控客户端配置</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="sa-side-folder" href="ansible_ops/ansible_conf.html">
+                            <span class="menu-item">ansible配置文件</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="sa-side-folder" href="shell_pull/shellPull.html">
+                            <span class="menu-item">脚本推送</span>
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        <a class="sa-side-form" href="conf_all/conf_all.html">
+                            <span class="menu-item">批量推送配置文件</span>
+                        </a>
+                        <ul class="list-unstyled menu-item">
+                                <li><a href="conf_all/conf_all.html">推送</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="sa-side-page" href="">
+                            <span class="menu-item">Pages</span>
+                        </a>
+                        <ul class="list-unstyled menu-item">
+                            <li><a href="login">Login</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                </aside>
+
+            <!-- Content -->
+            <section id="content" class="container">
+
+                <!-- Notification Drawer -->
+                <div id="notifications" class="tile drawer animated">
+                    <div class="listview narrow">
+                        <div class="media">
+                            <a href="">Notification Settings</a>
+                            <span class="drawer-close">&times;</span>
+                        </div>
+                        <div class="overflow" style="height: 254px">
+                            <div class="media">
+                                <div class="pull-left">
+                                    <img width="40" src="../static/img/profile-pics/centos.jpg" alt="">
+                                </div>
+                                <div class="media-body">
+                                    <small class="text-muted">Linux系统（云服务）</small><br>
+                                    <a class="t-overflow" href="CM_entring">Centos-7（服务器） 资产录入</a>
+                                </div>
+                            </div>
+                            <div class="media">
+                                <div class="pull-left">
+                                    <img width="40" src="../static/img/profile-pics/2.jpg" alt="">
+                                </div>
+                                <div class="media-body">
+                                    <small class="text-muted">David Villa - On 16/12/2013</small><br>
+                                    <a class="t-overflow" href="">Suspendisse in purus ut nibh placerat Cras pulvinar euismod nunc quis gravida. Suspendisse pharetra</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="media text-center whiter l-100">
+                            <a href=""><small>VIEW ALL</small></a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <h4 class="page-title">DASHBOARD</h4>
+
+                <!-- Shortcuts -->
+                <div class="block-area shortcut-area">
+                    <a class="shortcut tile" href="../LVS_DR/LVS_DR.html">
+                        <img src="../static/img/shortcuts/twitter.png" alt="">
+                        <small class="t-overflow">LVS_DR集群</small>
+                    </a>
+                    <a class="shortcut tile" href="../Crontab.html">
+                        <img src="../static/img/shortcuts/calendar.png" alt="">
+                        <small class="t-overflow">定时任务</small>
+                    </a>
+                    <a class="shortcut tile" href="zabbix_agent_install">
+                        <img src="../static/img/shortcuts/stats.png" alt="">
+                        <small class="t-overflow">监控端</small>
+                    </a>
+                    <a class="shortcut tile" href="http://192.168.74.150/zabbix/">
+                        <img src="../static/img/shortcuts/connections.png" alt="">
+                        <small class="t-overflow">Zabbix</small>
+                    </a>
+                </div>
+
+                <hr class="whiter" />
+
+                <!-- Breadcrumb -->
+                <ol class="breadcrumb hidden-xs">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Library</a></li>
+                    <li class="active">Data</li>
+                </ol>
+
+                <h4 class="page-title">系统计划任务</h4>
+
+
+                <!-- Multi Column -->
+                <div class="block-area" id="multi-column">
+                    <h3 class="block-title">Cron</h3>
+                    <form class="row form-columned" role="form" action="CronTab" name="CronTab" method="post">
+                        {% csrf_token %}
+                        <div class="col-md-4">
+                            <input name="server_groups" type="text" class="form-control input-sm m-b-10" placeholder="HOST">
+                        </div>
+                        <div class="col-md-4">
+                            <input name="cron_name" type="text" class="form-control input-sm m-b-10" placeholder="任务名">
+                        </div>
+                        <div class="col-md-4">
+                            <input name="minute" type="text" class="form-control input-sm m-b-10" placeholder="分">
+                        </div>
+                        <div class="col-md-4">
+                            <input name="hour" type="text" class="form-control input-sm m-b-10" placeholder="时">
+                        </div>
+                        <div class="col-md-4">
+                            <input name="day" type="text" class="form-control input-sm m-b-10" placeholder="日">
+                        </div>
+                        <div class="col-md-4">
+                            <input name="month" type="text" class="form-control input-sm m-b-10" placeholder="月">
+                        </div>
+                        <div class="col-md-4">
+                            <input name="weekday" type="text" class="form-control input-sm m-b-10" placeholder="周">
+                        </div>
+                        <div class="col-md-4 m-b-10">
+                            <select class="select" name="state">
+                                <option>present</option>
+                                <option>absent</option>
+                            </select>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="col-md-12">
+                            <textarea class="form-control m-b-10" name="job" placeholder="任务"></textarea>
+                        </div>
+                        <div class="col-md-10">
+                            <button type="submit" class="btn btn-sm">Save Crontab</button>
+                        </div>
+                    </form>
+                </div>
+
+                <hr class="whiter m-t-20" />
+
+            </section>
+
+
+        </section>
+
+        <!-- Javascript Libraries -->
+        <!-- jQuery -->
+        <script src="../static/js/jquery.min.js"></script> <!-- jQuery Library -->
+        <script src="../static/js/jquery-ui.min.js"></script> <!-- jQuery UI -->
+
+        <!-- Bootstrap -->
+        <script src="../static/js/bootstrap.min.js"></script>
+
+        <!--  Form Related -->
+        <script src="../static/js/validation/validate.min.js"></script> <!-- jQuery Form Validation Library -->
+        <script src="../static/js/validation/validationEngine.min.js"></script> <!-- jQuery Form Validation Library - requirred with above js -->
+        <script src="../static/js/select.min.js"></script> <!-- Custom Select -->
+        <script src="../static/js/chosen.min.js"></script> <!-- Custom Multi Select -->
+        <script src="../static/js/datetimepicker.min.js"></script> <!-- Date & Time Picker -->
+        <script src="../static/js/colorpicker.min.js"></script> <!-- Color Picker -->
+        <script src="../static/js/icheck.js"></script> <!-- Custom Checkbox + Radio -->
+        <script src="../static/js/autosize.min.js"></script> <!-- Textare autosize -->
+        <script src="../static/js/toggler.min.js"></script> <!-- Toggler -->
+        <script src="../static/js/input-mask.min.js"></script> <!-- Input Mask -->
+        <script src="../static/js/spinner.min.js"></script> <!-- Spinner -->
+        <script src="../static/js/slider.min.js"></script> <!-- Input Slider -->
+        <script src="../static/js/fileupload.min.js"></script> <!-- File Upload -->
+
+        <!-- Text Editor -->
+        <script src="../static/js/editor2.min.js"></script> <!-- WYSIWYG Editor -->
+        <script src="../static/js/markdown.min.js"></script> <!-- Markdown Editor -->
+
+        <!-- UX -->
+        <script src="../static/js/scroll.min.js"></script> <!-- Custom Scrollbar -->
+
+        <!-- Other -->
+        <script src="../static/js/calendar.min.js"></script> <!-- Calendar -->
+        <script src="../static/js/feeds.min.js"></script> <!-- News Feeds -->
+
+
+        <!-- All JS functions -->
+        <script src="../static/js/functions.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                /* Tag Select */
+                (function(){
+                    /* Limited */
+                    $(".tag-select-limited").chosen({
+                        max_selected_options: 5
+                    });
+
+                    /* Overflow */
+                    $('.overflow').niceScroll();
+                })();
+
+                /* Input Masking - you can include your own way */
+                (function(){
+                    $('.mask-date').mask('00/00/0000');
+                    $('.mask-time').mask('00:00:00');
+                    $('.mask-date_time').mask('00/00/0000 00:00:00');
+                    $('.mask-cep').mask('00000-000');
+                    $('.mask-phone').mask('0000-0000');
+                    $('.mask-phone_with_ddd').mask('(00) 0000-0000');
+                    $('.mask-phone_us').mask('(000) 000-0000');
+                    $('.mask-mixed').mask('AAA 000-S0S');
+                    $('.mask-cpf').mask('000.000.000-00', {reverse: true});
+                    $('.mask-money').mask('000.000.000.000.000,00', {reverse: true});
+                    $('.mask-money2').mask("#.##0,00", {reverse: true, maxlength: false});
+                    $('.mask-percent').mask('##0,00%', {reverse: true});
+                    $('.mask-credit_card').mask('0000 0000 0000 0000');
+                })();
+
+                /* Spinners */
+                (function(){
+                    //Basic
+                    $('.spinner-1').spinedit();
+
+                    //Set Value
+                    $('.spinner-2').spinedit('setValue', 100);
+
+                    //Set Minimum
+                    $('.spinner-3').spinedit('setMinimum', -10);
+
+                    //Set Maximum
+                    $('.spinner-4').spinedit('setMaxmum', 100);
+
+                    //Set Step
+                    $('.spinner-5').spinedit('setStep', 10);
+
+                    //Set Number Of Decimals
+                    $('.spinner-6').spinedit('setNumberOfDecimals', 2);
+                })();
+            });
+            </script>
+    </body>
+</html>
